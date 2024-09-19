@@ -22,6 +22,58 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+
+.event-container {
+  display: flex;
+  align-items: center;
+  height: 100%; 
+  width: 100%;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+
+/* Hero Section */
+.hero {
+  background-color: #000000; /* Black background */
+  color: #FFFFFF; /* White text */
+  text-align: center;
+  padding: 100px 20px; /* Adjust padding as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #FF5722; /* Deep Orange */
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+}
+
+.hero-button {
+  background-color: #03A9F4; /* Light Blue */
+  color: #FFFFFF; /* White text */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #4CAF50; /* Green on hover */
 }

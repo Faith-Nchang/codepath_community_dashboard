@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import './index.css';
+import NavBar from './components/NavBar'
 
 import Event from './components/Event'
 
@@ -9,7 +10,7 @@ function App() {
 
   const events = [
     {
-      image: "https://example.com/images/tech-conference.jpg",
+      image: "https://th.bing.com/th/id/OIP.eh5RRJ5l1pqHQDN1ubb1VAHaEx?rs=1&pid=ImgDetMain",
       name: "Global Tech Conference",
       country: "USA",
       link: "https://example.com/global-tech-conference"
@@ -121,12 +122,24 @@ function App() {
 
   return (
     <>
+
+    <NavBar />
+
+    
+    <section className="hero">
+            <div className="hero-content">
+                <h1>Welcome to the Community Board</h1>
+                <p>Find and share events and resources with your community!</p>
+                <a href="#events" className="hero-button">Explore Events</a>
+            </div>
+        </section>
+        
     {/* <Event image={reactLogo} name="React" country="USA" link="https://reactjs.org" /> */}
     
-    <div>
+    <div className='event-container'>
       {events.map((event, index) => (
-        <div key={index}>
-          <Event  name={event.name} country={event.country} link={event.link} />
+        <div key={index} className='events'>
+          <Event image ={event.image} name={event.name} country={event.country} link={event.link} />
         </div>
       ))}
     </div>

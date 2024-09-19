@@ -1,12 +1,32 @@
+/* Event Card Container */
 .event {
- 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin: 16px;
     transition: box-shadow 0.3s ease;
+    width: 320px; /* Width of the card */
+    margin: 15px 30px;
+    height: 500px; /* Height of the card */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: black;
+    overflow: hidden; /* Ensure child elements don’t overflow */
 }
 
+/* Event Card Image */
+.event img {
+    width: 100%;
+    flex-grow: 1;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+/* Hover Effect */
 .event:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Other styling */
+.event-content {
+    padding: 10px;
+    flex: 1;
 }

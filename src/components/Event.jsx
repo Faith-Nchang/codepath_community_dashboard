@@ -9,11 +9,13 @@ const Event = ({ image, name, country, link, date }) => {
                 <h3 className="event-name">{name}</h3>
                 <p className="event-country">{country}</p>
                 <p>{date}</p>
-                <button className="event-button"><a href={link} target="_blank" rel="noopener noreferrer" className="event-link">
+                <a href={link} target="_blank" rel="noopener noreferrer" className="event-link">
+                <button className="event-button">
 
                     More Info
-                    </a>
+                    
                     </button>
+                </a>
                 
             </div>
         </div>

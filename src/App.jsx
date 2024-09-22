@@ -1,150 +1,150 @@
 import { useState } from 'react'
 import './App.css'
 import './index.css';
-import NavBar from './components/NavBar'
 
 import Event from './components/Event'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  const events = [
+  const eventList = [
     {
-      image: "https://th.bing.com/th/id/OIP.eh5RRJ5l1pqHQDN1ubb1VAHaEx?rs=1&pid=ImgDetMain",
-      name: "Global Tech Conference",
+      image: "https://th.bing.com/th/id/OIP.aGrs1F1kY-OLiQdheowMmQAAAA?rs=1&pid=ImgDetMain",
+      name: "Web Summit 2024",
+      country: "Portugal",
+      date: "November 4-7, 2024",
+      link: "https://websummit.com"
+    },
+    {
+      image: "https://th.bing.com/th/id/OIP.44lGA0vVUjwhiz7EqwEA-wHaD4?rs=1&pid=ImgDetMain",
+      name: "PyCon US 2024",
       country: "USA",
-      link: "https://example.com/global-tech-conference"
+      date: "April 17-25, 2024",
+      link: "https://us.pycon.org/2024/"
     },
     {
-      image: "https://example.com/images/music-festival.jpg",
-      name: "Summer Music Festival",
-      country: "Canada",
-      link: "https://example.com/summer-music-festival"
+      image: "https://assets.hardwarezone.com/img/2024/05/google-io-2024-header.jpg",
+      name: "Google I/O 2024",
+      country: "USA",
+      date: "May 2024 (Dates TBA)",
+      link: "https://io.google/2024/"
     },
     {
-      image: "https://example.com/images/ai-summit.jpg",
-      name: "AI Innovation Summit",
+      image: "https://th.bing.com/th/id/OIP.ogPEpTS8MQWNNA-dHv9EewHaD4?rs=1&pid=ImgDetMain",
+      name: "GitHub Universe 2024",
+      country: "USA",
+      date: "October 9-10, 2024",
+      link: "https://githubuniverse.com/"
+    },
+    {
+      image: "https://th.bing.com/th/id/OIF.0tFhFKfoX9a8qCiRmhuH2Q?rs=1&pid=ImgDetMain",
+      name: "Apple WWDC 2024",
+      country: "USA",
+      date: "June 2024 (Dates TBA)",
+      link: "https://developer.apple.com/wwdc24/"
+    },
+    {
+      image: "https://th.bing.com/th/id/OIP.gM8wj-jL600lzlKkzy1IHgHaEO?rs=1&pid=ImgDetMain",
+      name: "Microsoft Build 2024",
+      country: "USA",
+      date: "May 2024 (Dates TBA)",
+      link: "https://www.microsoft.com/en-us/build"
+    },
+    {
+      image: "https://th.bing.com/th/id/OIP.Qe-CbB4PztqdJic_aYW1ygAAAA?rs=1&pid=ImgDetMain",
+      name: "React Summit 2024",
+      country: "Netherlands",
+      date: "April 19, 2024",
+      link: "https://reactsummit.com/"
+    },
+    {
+      image: "https://th.bing.com/th/id/OIP.8tF3Hh-ixS8ERZI60xlWmQHaDt?rs=1&pid=ImgDetMain",
+      name: "DEF CON 32",
+      country: "USA",
+      date: "August 8-11, 2024",
+      link: "https://defcon.org/"
+    },
+    {
+      image: "https://th.bing.com/th/id/OIP.jC0sE0dHZ0FkQxkDx2aTTAHaEK?rs=1&pid=ImgDetMain",
+      name: "ETHGlobal Hackathons",
+      country: "Various",
+      date: "Multiple Dates",
+      link: "https://ethglobal.com/"
+    },
+    {
+      image: "https://th.bing.com/th/id/OIP.xTC9IKdDFGZgzFgeqxRlcwHaFD?rs=1&pid=ImgDetMain",
+      name: "JSConf EU 2024",
       country: "Germany",
-      link: "https://example.com/ai-summit"
+      date: "June 6-8, 2024",
+      link: "https://jsconf.eu/"
     },
     {
-      image: "https://example.com/images/film-festival.jpg",
-      name: "International Film Festival",
-      country: "France",
-      link: "https://example.com/film-festival"
+      image: "https://i.ytimg.com/vi/bK3Xc9INJ00/maxresdefault.jpg",
+      name: "TEDx San Francisco",
+      country: "USA",
+      date: "October 2024 (Exact Date TBA)",
+      link: "https://www.tedxsanfrancisco.com/"
     },
     {
-      image: "https://example.com/images/startup-bootcamp.jpg",
-      name: "Startup Bootcamp",
-      country: "UK",
-      link: "https://example.com/startup-bootcamp"
+      image: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/aa96e4149607053.62fe703e2b893.jpg",
+      name: "O'Reilly Software Architecture Conference",
+      country: "USA",
+      date: "April 8-11, 2024",
+      link: "https://www.oreilly.com/conferences/"
     },
     {
-      image: "https://example.com/images/art-expo.jpg",
-      name: "Contemporary Art Expo",
-      country: "Italy",
-      link: "https://example.com/art-expo"
+      image: "https://artandlogic.com/wp-content/uploads/2019/01/Strange_Loop.jpg",
+      name: "Strange Loop Conference",
+      country: "USA",
+      date: "September 12-14, 2024",
+      link: "https://www.thestrangeloop.com/"
     },
     {
-      image: "https://example.com/images/environment-conference.jpg",
-      name: "Green Earth Environment Conference",
-      country: "Australia",
-      link: "https://example.com/environment-conference"
-    },
-    {
-      image: "https://example.com/images/blockchain-summit.jpg",
-      name: "Blockchain Revolution Summit",
-      country: "Switzerland",
-      link: "https://example.com/blockchain-summit"
-    },
-    {
-      image: "https://example.com/images/gaming-expo.jpg",
-      name: "World Gaming Expo",
-      country: "Japan",
-      link: "https://example.com/gaming-expo"
-    },
-    {
-      image: "https://example.com/images/food-festival.jpg",
-      name: "Gourmet Food Festival",
+      image: "https://www.moogsoft.com/wp-content/uploads/2022/11/KubeCon.png",
+      name: "KubeCon + CloudNativeCon",
       country: "Spain",
-      link: "https://example.com/food-festival"
+      date: "March 18-22, 2024",
+      link: "https://kubecon.io/"
     },
     {
-      image: "https://example.com/images/space-exploration.jpg",
-      name: "Space Exploration Summit",
-      country: "Russia",
-      link: "https://example.com/space-exploration"
-    },
-    {
-      image: "https://example.com/images/photography-conference.jpg",
-      name: "Photography Masters Conference",
-      country: "Brazil",
-      link: "https://example.com/photography-conference"
-    },
-    {
-      image: "https://example.com/images/healthcare-summit.jpg",
-      name: "Global Healthcare Summit",
-      country: "India",
-      link: "https://example.com/healthcare-summit"
-    },
-    {
-      image: "https://example.com/images/robotics-conference.jpg",
-      name: "Robotics and Automation Conference",
-      country: "South Korea",
-      link: "https://example.com/robotics-conference"
-    },
-    {
-      image: "https://example.com/images/wildlife-conservation.jpg",
-      name: "Wildlife Conservation Forum",
-      country: "Kenya",
-      link: "https://example.com/wildlife-conservation"
-    },
-    {
-      image: "https://example.com/images/education-summit.jpg",
-      name: "Future of Education Summit",
-      country: "Finland",
-      link: "https://example.com/education-summit"
-    },
-    {
-      image: "https://example.com/images/fitness-conference.jpg",
-      name: "Global Fitness Conference",
-      country: "South Africa",
-      link: "https://example.com/fitness-conference"
-    },
-    {
-      image: "https://example.com/images/innovation-awards.jpg",
-      name: "Innovation Awards Gala",
-      country: "Singapore",
-      link: "https://example.com/innovation-awards"
+      image: "https://cdn.vox-cdn.com/thumbor/I9b7hgVOg2E3GT1bzeV3B241wMo=/0x0:8256x5504/2000x1333/filters:focal(4128x2752:4129x2753)/cdn.vox-cdn.com/uploads/chorus_asset/file/25065879/Sam_Altman_keynote_OpenAI_DevDay.jpg",
+      name: "OpenAI Dev Day",
+      country: "USA",
+      date: "November 6, 2024",
+      link: "https://openai.com/devday"
     }
   ];
-  
 
+  const [events, setEvents] = useState(eventList);
+  
   return (
     <>
-
-    <NavBar />
-
-    
-    <section className="hero">
-            <div className="hero-content">
-                <h1>Welcome to the Community Board</h1>
-                <p>Find and share events and resources with your community!</p>
-                <a href="#events" className="hero-button">Explore Events</a>
-            </div>
-        </section>
-        
-    {/* <Event image={reactLogo} name="React" country="USA" link="https://reactjs.org" /> */}
-    
-    <div className='event-container'>
-      {events.map((event, index) => (
-        <div key={index} className='events'>
-          <Event image ={event.image} name={event.name} country={event.country} link={event.link} />
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Welcome to the Developers Community Board</h1>
+          <p>Find and share events and resources with your community!</p>
+          <a href="#events" className="hero-button">Explore Events</a>
         </div>
-      ))}
-    </div>
-  </>
-  )  
+      </section>
+      
+      <section id="events" className="events-section">
+       
+        
+        <div className="event-container">
+          {events.map((event, index) => (
+            <div key={index} className="events">
+              <Event 
+                image={event.image} 
+                name={event.name} 
+                country={event.country} 
+                link={event.link} 
+                date={event.date} 
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  )
 }
 
 export default App

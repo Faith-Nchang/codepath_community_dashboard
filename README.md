@@ -28,6 +28,8 @@ Here's a walkthrough of implemented required features:
 
 <img src='https://github.com/Faith-Nchang/codepath_community_dashboard/blob/main/gif_pr1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+link: https://github.com/Faith-Nchang/codepath_community_dashboard/blob/main/gif_pr1.gif
+
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
 <!-- Recommended tools:
